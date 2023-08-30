@@ -1,0 +1,107 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Aug 13 15:44:07 2023
+
+@author: Yusra Shahid
+"""
+
+### Functions
+'''
+Suppose you are playing a car racing game and you have nitro boost with you that you use to help you 
+win the race. Functions are same, they help us do specific tasks in our code.
+
+For example, let's say you're playing a game where you need to roll a dice and find out what number
+you got. You could create a function called "roll_dice()" that simulates rolling a dice.
+Whenever you want to roll the dice, you just say "roll_dice()" and the function gives you a
+random number
+'''
+
+
+import turtle
+import random
+
+## make players
+
+player_one = turtle.Turtle()
+player_one.color("green")
+player_one.shape("turtle")
+player_one.penup()
+player_one.goto(-200,100)
+player_two = player_one.clone()
+player_two.color("blue")
+player_two.penup()
+player_two.goto(-200,-100)
+
+## make final points
+
+player_one.goto(300,60)
+player_one.pendown()
+player_one.circle(40)
+player_one.penup()
+player_one.goto(-200,100)
+player_two.goto(300,-140)
+player_two.pendown()
+player_two.circle(40)
+player_two.penup()
+player_two.goto(-200,-100)
+
+## function to choose randomly from die to select number of steps to take
+
+
+def boost():
+    return 200
+
+     
+
+
+def roll_die():
+
+    die = [1,2,3,4,5,6]
+
+    player_one_turn = input("Press 'Enter' to roll the die ")
+
+    die_outcome = random.choice(die)
+
+    print("The result of the die roll is: ")
+
+    print(die_outcome)
+
+    print("The number of steps will be: ")
+
+    print(20*die_outcome)
+    
+    return die_outcome
+
+
+
+
+## play 
+
+for i in range(20):
+
+    if player_one.pos() >= (300,100):
+
+        print("Player One Wins!")
+
+        break
+
+    elif player_two.pos() >= (300,-100):
+
+        print("Player Two Wins!")
+
+        break
+
+    else:
+            die_outcome = roll_die()
+
+            player_one.forward
+
+            die_outcome = roll_die()
+
+            player_two.forward(20*die_outcome)
+
+
+
+
+
+
